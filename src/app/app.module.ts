@@ -10,7 +10,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalUploadComponent } from './Components/modal-upload/modal-upload.component';
-import { DataGridComponent } from './Components/data-grid/data-grid.component';
+import { DataGridComponent } from './Components/image-Grid/data-grid.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +25,12 @@ import { DataGridComponent } from './Components/data-grid/data-grid.component';
     DataGridComponent
   ],
   imports: [
+    FormsModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatProgressBarModule,
+    MatToolbarModule,
     MatGridListModule,
     MatButtonModule,
     MatDialogModule,
