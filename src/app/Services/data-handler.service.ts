@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ImageModel } from '../Models/image-model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataHandlerService {
-  dataTiles: ImageModel[] = [];
-
+  dataTiles$: BehaviorSubject<ImageModel[]> = new BehaviorSubject<ImageModel[]>([]);
+  datalist: ImageModel[] = [];
   constructor() {}
 
-  UploadImage() {}
+  UploadImage(data: ImageModel) {
+    this.datalist.push(data);
+    this.dataTiles$.next(this.datalist);
+    console.log(this.dataTiles$);
+  }
 
   UpdateTiles() {}
 
@@ -21,9 +26,9 @@ export class DataHandlerService {
       Name: 'Kitty',
       ImageType: 'type'};
 
-      this.dataTiles.push(element);
+      this.datalist.push(element);
     }
 
-    return this.dataTiles;
+    return this.datalist;
   }
 }

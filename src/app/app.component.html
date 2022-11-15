@@ -15,7 +15,7 @@
       id="uploadFile"
       (change)="uploadFileEvt($event)"
       name="uploadFile"
-      multiple="multiple"
+     
       accept="image/*"
     />
   </div>
@@ -23,9 +23,14 @@
 
 
 
+  
+  <!-- <img *ngIf="img" src={{img}} alt=" " width="256"/> -->
+
+
+
 <button (click)="openModal('')">Upload Image</button>
 
-<!-- <app-data-grid></app-data-grid> -->
+<app-data-grid></app-data-grid>
 
 
 

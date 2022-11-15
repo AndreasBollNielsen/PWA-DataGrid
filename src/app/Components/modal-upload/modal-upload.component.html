@@ -1,43 +1,79 @@
-<div class="shadowBox modalcolor">
-  <mat-grid-list cols="2">
-    <mat-grid-tile>
-      <img
-        width="256px"
-        src="https://media.istockphoto.com/id/1067347086/photo/cat-with-blue-eyes-looks-at-camera.jpg?b=1&s=170667a&w=0&k=20&c=UvUyWWSKNX15YAuzQfsqeJholO_aRhRUU3QL-duqbWo="
-      />
-      <mat-grid-tile-footer>
-        <input type="text" />
-      </mat-grid-tile-footer>
+<div class=" modalcolor">
+
+
+
+  <mat-grid-list cols="2" gutterSize="10px">
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+
+      <img src={{data.Path}} alt=" " width="512px" />
+
     </mat-grid-tile>
-    <mat-grid-tile> </mat-grid-tile>
 
-    <mat-grid-tile> </mat-grid-tile>
 
-    <div>
-      <mat-grid-list cols="2">
-        <mat-grid-tile>
-          <mat-form-field appearance="fill">
-            <mat-label>Choose image type</mat-label>
-            <mat-select>
-              <mat-option value="JPG">JPG</mat-option>
-              <mat-option value="PNG">PNG</mat-option>
-              <mat-option value="GIF">GIF</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
 
-        <mat-grid-tile>
-          <mat-form-field appearance="fill">
-            <mat-label>Choose image size</mat-label>
-            <mat-select>
-              <mat-option value="128 x 128">128 x 128</mat-option>
-              <mat-option value="256 x 256">256 x 256</mat-option>
-              <mat-option value="512 x 512">512 x 512</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
-    </div>
+    <mat-grid-tile>
+      
+        <mat-grid-list cols="3">
+          <mat-grid-tile>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Choose image type</mat-label>
+              <mat-select>
+                <mat-option value="JPG">JPG</mat-option>
+                <mat-option value="PNG">PNG</mat-option>
+                <mat-option value="GIF">GIF</mat-option>
+              </mat-select>
+
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose image size</mat-label>
+              <mat-select>
+                <mat-option value="128 x 128">128 x 128</mat-option>
+                <mat-option value="256 x 256">256 x 256</mat-option>
+                <mat-option value="512 x 512">512 x 512</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2">
+            <label for="name_input">Image name</label>
+            <input name="name_input">
+          </mat-grid-tile>
+        </mat-grid-list>
+      
+    </mat-grid-tile>
+
+    <!-- <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose image type</mat-label>
+        <mat-select>
+          <mat-option value="JPG">JPG</mat-option>
+          <mat-option value="PNG">PNG</mat-option>
+          <mat-option value="GIF">GIF</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose image size</mat-label>
+        <mat-select>
+          <mat-option value="128 x 128">128 x 128</mat-option>
+          <mat-option value="256 x 256">256 x 256</mat-option>
+          <mat-option value="512 x 512">512 x 512</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile [rowspan]="2" [colspan]="1">
+      <input>
+    </mat-grid-tile> -->
+
+
 
   </mat-grid-list>
 

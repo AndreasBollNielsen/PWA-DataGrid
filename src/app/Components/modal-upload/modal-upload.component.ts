@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ImageModel } from 'src/app/Models/image-model';
 
 @Component({
   selector: 'app-modal-upload',
@@ -8,14 +9,25 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ModalUploadComponent implements OnInit {
 
-  // constructor(@Inject(MAT_DIALOG_DATA) public data: {Path: string,Name: string}) { }
+  img: any;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: ImageModel) {
 
-  constructor()
-  {
+    this.img = data.Path;
 
+    console.log("dialog: ",this.img);
   }
+
+
+  // constructor()
+  // {
+
+  // }
 
   ngOnInit(): void {
+
+    console.log(this.img.Path);
   }
+
+ 
 
 }
