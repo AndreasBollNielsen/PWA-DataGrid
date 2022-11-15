@@ -9,15 +9,17 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalUploadComponent } from './Components/modal-upload/modal-upload.component';
 import { DataGridComponent } from './Components/image-Grid/data-grid.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatInputModule } from '@angular/material/input'; 
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule} from '@angular/forms';
 import { ImageDetailsComponent } from './Components/image-details/image-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ImageDetailsComponent } from './Components/image-details/image-details.
     DataGridComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
     FormsModule,
     MatInputModule,
     MatSelectModule,

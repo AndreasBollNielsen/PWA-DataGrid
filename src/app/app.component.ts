@@ -17,7 +17,7 @@ export class AppComponent {
   img: any;
 
   constructor(public dialog: MatDialog, private datahandler: DataHandlerService) {
-    
+
 
   }
 
@@ -35,16 +35,15 @@ export class AppComponent {
       reader.onload = (e: any) => {
         let image = new Image();
         image.src = e.target.result;
-        
+
         image.onload = (rs) => {
           let imgBase64Path = e.target.result;
           const imgFile = imgBase64Path;
-          
+
           this.img = imgFile;
-         
+
         // console.log(imgFile);
-        const imagedata: ImageModel = {Path: imgFile,Name: 'name',ImageType: 'type'};
-          //this.datahandler.UploadImage(imagedata);
+
           this.openModal(imgFile);
 
         };
@@ -61,15 +60,22 @@ export class AppComponent {
 
     openModal(image: any)
     {
-      const imagedata: ImageModel = {Path: image,Name: 'name',ImageType: 'type'};
+      const imagedata: ImageModel = {Path: image,Name: '',ImageType: '',ImageSize: ''};
 
       const config = new MatDialogConfig();
       config.autoFocus = true;
       config.width = '110vh';
-      config.height = '50vh';
+      config.height = '90vh';
       config.data = imagedata;
 
-      this.dialog.open(ModalUploadComponent, config);
+
+      const dialogRef = this.dialog.open(ModalUploadComponent, config);
+      dialogRef.afterClosed().subscribe(data => {
+       // console.log(data);
+        const imagedata: ImageModel = {Path: data.ImagePath,Name: data.Name,ImageType: data.ImageType,ImageSize: data.Imagesize};
+        console.log(imagedata);
+          this.datahandler.UploadImage(imagedata);
+      });
     }
 
 

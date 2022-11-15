@@ -1,5 +1,5 @@
-<mat-grid-list cols="3">
-  <mat-grid-tile  class="shadowBox" *ngFor="let tile of imageTiles" rowHeight="100px" gutterSize="20px"  [style.background]="'white'">
-    <img (click)="RowDetails(tile)" class="margin" src={{tile.Path}} width="128px">
+<mat-grid-list cols="8" [gutterSize]="'10px'">
+  <mat-grid-tile (click)="RowDetails(tile,i)" class="shadowBox"  *ngFor="let tile of imageTiles; let i = index"  rowHeight="50px"   [style.background]="'white'">
+    <img  class="margin" src={{tile.Path}} width="50%">
   </mat-grid-tile>
 </mat-grid-list>
